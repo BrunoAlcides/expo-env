@@ -1,7 +1,7 @@
 var defaultOptions = {
   template: 'config.js',
-  configPath: "./",
-  configFile: './config.json',
+  configPath: "./config",
+  configFile: './app.json',
   outputFile: './app.json'
 };
 
