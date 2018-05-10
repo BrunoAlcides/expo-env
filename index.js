@@ -3,6 +3,7 @@
 var fs = require('fs');
 var path = require('path');
 var prompt = require('prompt');
+var merge = require('lodash.merge');
 var defaultOptions = require('./default');
 
 var args = process.argv.slice(2);
@@ -44,8 +45,8 @@ function buildConfig(env) {
 
   if (fs.existsSync(fpath)) {
     config = JSON.parse(fs.readFileSync(path.join(process.cwd(), options.configFile), 'utf8')) || {};
-    config.expo = config.expo || {};
-    config.expo.extra = envFile;
+
+    config = merge(config, envFile)
     fs.writeFileSync(path.join(process.cwd(), options.outputFile), JSON.stringify(config, null, 2), 'utf8');
   }
 }
