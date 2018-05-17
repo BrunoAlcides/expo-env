@@ -3,7 +3,7 @@
 var fs = require('fs');
 var path = require('path');
 var prompt = require('prompt');
-var merge = require('lodash.merge');
+var merge = require('lodash/merge');
 var defaultOptions = require('./default');
 
 var args = process.argv.slice(2);
